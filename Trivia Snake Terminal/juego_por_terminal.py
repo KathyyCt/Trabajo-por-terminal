@@ -77,8 +77,14 @@ while validacion:
             print (f"Juego terminado, la posicion a la que llegaste es {posicion_del_jugador}")
         
 puntaje = posicion_del_jugador
-
-puntaje = posicion_del_jugador
 with open("Score.csv", mode="a", newline='') as archivo:
     escritor = csv.writer(archivo)
-    escritor.writerow([nombre, puntaje])
+    escritor.writerow([f"Nombre: {nombre}", f"Puntaje: {puntaje}"])
+
+
+with open("Score.csv", mode="r", encoding="utf-8") as archivo:
+    lector = csv.reader(archivo)
+    print("--- PUNTAJES GUARDADOS ---\n")
+    for fila in lector:
+        if len(fila) == 2:
+            print(f"{fila[0]} | {fila[1]}")
