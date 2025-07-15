@@ -24,6 +24,7 @@ while validacion:
 
     if not indice:
         print("No hay más preguntas disponibles. Fin del juego.")
+        validacion_pregunta_seguir = False
         validacion = False
     else:
         posicion_random = random.randint(0, len(indice) - 1)
